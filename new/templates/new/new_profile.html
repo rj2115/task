@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>Welcome!!{{user}}</h1>
+
+{% if message in messages %}
+{%for message in messages%} 
+    <small {%if message.tags%} class="{{message.tags}}"{%endif%}>{{message}}</small>
+    {%endfor%}
+    {%endif%}
+
+    <a href="{% url 'logout'%}">logout here!</a>
+</body>
+</html>

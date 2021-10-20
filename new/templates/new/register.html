@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+<meta charset="UFT-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"
+
+</head>
+<body>
+ <h1 >REGISTER HERE!</h1>
+
+ <form method="post" action="" novalidate>
+ 
+ {% csrf_token %}
+ {% for fm in form %}
+ {{fm.label_tag}}{{fm}}{{fm.errors|striptags}} <br><br>
+ {% endfor %}
+ <input type="submit" value="Submit">
+
+ </form>
+ {% if messages %}
+ {% for message in messages %}
+ <small {% if message.tags %}class="{{message.tags}}" {% endif %}>{{ message}}</small>
+ {% endfor %}
+ {%endif%}
+ <a href="{% url 'login' %}">Registered already? Then login here!</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1>Validation page!!</h1>
+
+
+    <form  action"{% url 'hi' %}" method="post">
+      {%csrf_token%}
+    input:
+    <input type="text"  name="input"><br>
+    <input type="radio" name="filter" value='extract_date'>Extract Date<br>
+    <input type="radio" name="filter" value='validate_email'>Validating Email Address<br>
+    <input type="radio" name="filter" value='quote_string'>Extracting string in the quotes<br>
+    <input type="radio" name="filter" value='ip_address'>Validating IP Address<br>
+    <input type="radio" name="filter" value='mac_address'>Validating mac Address<br>
+    <input type="radio" name="filter" value='num_100'>Extracting numbers greater than 100<br>
+    <input type="radio" name="filter" value='camel_to_snake'>Camel case to Snake case<br>
+   
+
+
+    <button type="submit" >Submit</button>
+    </form>
+    <div class="output">
+      <h3>
+        Output is {{match}}:{{validation}}  
+       
+     </h3>
+  
+    </div>
+ 
+</body>
+</html>
